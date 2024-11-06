@@ -4,7 +4,7 @@
 
 {% block content %}
 <h2 class="dashboard-header">Login</h2>
-<form method="POST">
+<form method="POST" action="{% url 'login-post'%}">
     {% csrf_token %}
     <input type="text" name="username" placeholder="Username" required>
     <input type="password" name="password" placeholder="Password" required>
