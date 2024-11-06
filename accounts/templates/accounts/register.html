@@ -4,7 +4,7 @@
 
 {% block content %}
 <h2 class="dashboard-header">Register</h2>
-<form method="POST">
+<form method="POST" action="{% url 'register-post'%}">
     {% csrf_token %}
     <input type="text" name="username" placeholder="Enter your Username" required>
     <input type="email" name="email" placeholder="Enter your email" required>
