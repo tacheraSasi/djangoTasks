@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login ,logout
 
 
 def loginPage(request):
@@ -18,6 +18,9 @@ def loginPost(request):
         
         if user is not None:
             login(request,user)
+            redirect('dashboard')
+        else:
+            messages.error(request,"Invalid credentails")
     else:
         return HttpResponse("Invalid method")
 
@@ -65,5 +68,7 @@ def dashboard(request):
 def welcome(request):
     return render(request,"accounts/welcome.html")
 
-def logout(request):
+def logout_view(request):
+    logout(request)
+    redirect('login')
     print("User has looged out successfully")
