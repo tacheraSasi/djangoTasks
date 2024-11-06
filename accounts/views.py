@@ -12,15 +12,17 @@ def loginPage(request):
 
 def loginPost(request):
     if request.method == "POST":
-        email = request.POST['email']
+        username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request,email=email,password=password)
+        user = authenticate(request,username=username,password=password)
+        print(user)
         
         if user is not None:
             login(request,user)
-            redirect('dashboard')
+            return redirect('dashboard')
         else:
             messages.error(request,"Invalid credentails")
+            return redirect('login')
     else:
         return HttpResponse("Invalid method")
 

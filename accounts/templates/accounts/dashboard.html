@@ -4,6 +4,6 @@
 
 {% block content %}
 <h2 class="dashboard-header">Welcome to the Dashboard</h2>
-<p class="dashboard-content">You are successfully logged in.</p>
+<p class="dashboard-content">Hello, {{ request.user }}.</p>
 <a href="{% url 'logout' %}" class="nav-link">Logout</a>
 {% endblock %}
