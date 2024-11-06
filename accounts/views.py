@@ -7,3 +7,9 @@ def login(request):
 
 def register(request):
     return render(request,"accounts/register.html")
+
+def dashboard(request):
+    return render(request,"accounts/dashboard.html")
+
+def welcome(request):
+    return render(request,"accounts/welcome.html")
