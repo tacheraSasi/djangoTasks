@@ -1,13 +1,14 @@
 {% extends 'accounts/base.html' %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Register{% endblock %}
 
 {% block content %}
-<h2 class="dashboard-header">Login</h2>
+<h2 class="dashboard-header">Register</h2>
 <form method="POST">
     {% csrf_token %}
     <input type="text" name="username" placeholder="Username" required>
     <input type="password" name="password" placeholder="Password" required>
-    <button type="submit">Login</button>
+    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+    <button type="submit">Register</button>
 </form>
 {% endblock %}
