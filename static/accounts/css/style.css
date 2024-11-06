@@ -48,6 +48,7 @@ form {
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"],
 button {
     padding: 1rem;
