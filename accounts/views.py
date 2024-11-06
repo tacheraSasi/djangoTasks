@@ -7,7 +7,11 @@ def login(request):
     return render(request,"accounts/login.html")
 
 def register(request):
-    if request.met
+    if request.method == "POST":
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        confirm_password = request.POST['confirm_password']
     return render(request,"accounts/register.html")
 
 @login_required
