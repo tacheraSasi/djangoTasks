@@ -3,15 +3,23 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 
-# Create your views here.
 
-def login(request):
+def loginPage(request):
     return render(request,"accounts/login.html")
 
 
 def loginPost(request):
-    return render(request,"accounts/login.html")
+    if request.method == "POST":
+        email = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(request,email=email,password=password)
+        
+        if user is not None:
+            login(request,user)
+    else:
+        return HttpResponse("Invalid method")
 
 def register(request):
     return render(request,"accounts/register.html")
