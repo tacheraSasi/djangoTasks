@@ -30,17 +30,21 @@
                 <div class="alert alert-{{ message.tags }}">{{ message }}</div>
             {% endfor %}
         {% endif %}
-
         {% block content %}{% endblock %}
     </div>
 
-    <div class="modal">
+    <!-- Modal -->
+    <div class="modal" id="taskModal">
         <div class="modal-header">
-            <div class="modal-title"></div>
-            <button class="modal-close">X</button>
+            <span class="modal-title">Add New Task</span>
+            <button class="modal-close" id="closeModal">&times;</button>
         </div>
         <div class="modal-content">
-
+            <form id="taskForm">
+                <input type="text" placeholder="Task Title" required>
+                <input type="text" placeholder="Task Description">
+                <button type="submit" class="modal-submit">Add Task</button>
+            </form>
         </div>
     </div>
 
