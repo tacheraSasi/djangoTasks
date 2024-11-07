@@ -1,6 +1,6 @@
 :root {
-    --accent-color: #ffb6c1;
-    --accent-hover: #ffa8b0;
+    --accent-color: #b99584;
+    --accent-hover: #d6b48e;
     --background-color: #f5f5f5;
     --text-color: #333;
     --card-bg-color: #ffffff;
@@ -28,29 +28,55 @@ body {
 .navbar {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
     background-color: var(--text-color);
     color: #fff;
-    padding: 6px 1rem;
-    margin:1rem;
     border-radius: 1rem;
-    box-shadow: 0 6px 15px var(--box-shadow);
+    box-shadow: 0 8px 20px var(--box-shadow);
+    margin: 1rem;
     gap: 1.5rem;
-    transition: var(--transition-speed);
 }
 
-.nav-link {
-    color: var(--accent-color);
+/* Centered links, space between left and right sections */
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-link, .add-task-btn {
+    color: #fff;
+    background-color: var(--accent-color);
     font-size: 1rem;
     font-weight: 600;
     padding: 0.5rem 1.5rem;
-    border-radius: 5px;
-    transition: background-color var(--transition-speed), color var(--transition-speed), transform 0.2s;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color var(--transition-speed), transform 0.2s;
+    display: inline-block;
 }
 
-.nav-link:hover {
+.nav-link:hover, .add-task-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Buttons */
+button {
+    padding: 0.5rem 1.5rem;
     color: #fff;
     background-color: var(--accent-color);
-    transform: scale(1.05);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color var(--transition-speed), transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-3px);
 }
 
 /* Container */
@@ -63,101 +89,4 @@ body {
     box-shadow: 0 8px 20px var(--box-shadow);
 }
 
-/* Form Styling */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-button {
-    padding: 12px;
-    margin: 0.5rem 0;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 1rem;
-    transition: all var(--transition-speed);
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-    border-color: var(--accent-color);
-    outline: none;
-    box-shadow: 0 0 5px var(--accent-color);
-}
-
-button {
-    background-color: var(--accent-color);
-    color: #333;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color var(--transition-speed), transform 0.2s;
-}
-
-button:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-3px);
-}
-
-/* Alerts */
-.alert {
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-}
-
-.alert-success {
-    background-color: #4caf50;
-}
-
-.alert-error {
-    background-color: #f44336;
-}
-
-.alert-warning {
-    background-color: #ff9800;
-}
-
-/* Dashboard Header */
-.dashboard-header {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    text-align: center;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #ddd;
-}
-
-/* Card Design */
-.card {
-    background-color: var(--card-bg-color);
-    border-radius: 16px;
-    padding: 2rem;
-    margin: 1.5rem 0;
-    box-shadow: 0 8px 20px var(--box-shadow);
-    transition: all var(--transition-speed);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Additional Customizations */
-.section-title {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #333;
-    padding: 0.5rem 0;
-    border-bottom: 3px solid var(--accent-color);
-    margin-bottom: 1.5rem;
-}
+/* modal */

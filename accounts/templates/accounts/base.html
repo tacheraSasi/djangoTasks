@@ -10,16 +10,20 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="{% url 'dashboard' %}" class="nav-link">Dashboard</a>
-        {% if not request.user.is_authenticated %}
-            <a href="{% url 'login' %}" class="nav-link">Login</a>
-            <a href="{% url 'register' %}" class="nav-link">Register</a>
-        {% else %}
-            <a href="{% url 'logout' %}" class="nav-link">Logout</a>
-            <button class="add-task-btn">Add Task</button>
-        {% endif %}
+        <div class="nav-left">
+            <a href="{% url 'dashboard' %}" class="nav-link">Dashboard</a>
+        </div>
+        <div class="nav-right">
+            {% if not request.user.is_authenticated %}
+                <a href="{% url 'login' %}" class="nav-link">Login</a>
+                <a href="{% url 'register' %}" class="nav-link">Register</a>
+            {% else %}
+                <button class="add-task-btn">Add Task</button>
+                <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+            {% endif %}
+        </div>
     </nav>
-    
+
     <div class="container">
         {% if messages %}
             {% for message in messages %}
@@ -29,7 +33,17 @@
 
         {% block content %}{% endblock %}
     </div>
-    
+
+    <div class="modal">
+        <div class="modal-header">
+            <div class="modal-title"></div>
+            <button class="modal-close">X</button>
+        </div>
+        <div class="modal-content">
+
+        </div>
+    </div>
+
     <script src="{% static 'accounts/js/main.js' %}"></script>
 </body>
 </html>
