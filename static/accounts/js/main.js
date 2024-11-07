@@ -1,4 +1,3 @@
-// JavaScript for modal functionality
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.querySelector('.modal');
     const addTaskBtn = document.querySelector('.add-task-btn');
