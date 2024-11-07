@@ -11,9 +11,13 @@
 <body>
     <nav class="navbar">
         <a href="{% url 'dashboard' %}" class="nav-link">Dashboard</a>
-        <a href="{% url 'login' %}" class="nav-link">Login</a>
-        <a href="{% url 'register' %}" class="nav-link">Register</a>
-        <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+        {% if not request.user.is_authenticated %}
+            <a href="{% url 'login' %}" class="nav-link">Login</a>
+            <a href="{% url 'register' %}" class="nav-link">Register</a>
+        {% else %}
+            <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+            <button class="add-task-btn">Add Task</button>
+        {% endif %}
     </nav>
     
     <div class="container">
@@ -25,6 +29,7 @@
 
         {% block content %}{% endblock %}
     </div>
+    
     <script src="{% static 'accounts/js/main.js' %}"></script>
 </body>
 </html>
