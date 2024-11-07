@@ -5,6 +5,9 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login ,logout
 
+def home(request):
+    messages.success(request,"You have been redirect to the login page")
+    return redirect('login')
 
 def loginPage(request):
     return render(request,"accounts/login.html")

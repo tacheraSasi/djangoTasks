@@ -1,3 +1,7 @@
+:root{
+    --accent-color:#ffb6c1
+}
+
 /* General Reset */
 * {
     margin: 0;
@@ -23,7 +27,7 @@ body {
 }
 
 .nav-link {
-    color: #ffb6c1; /* Pale pink accent */
+    color: var(--accent-color); /* Pale pink accent */
     font-size: 1rem;
     font-weight: 600;
     padding: 0.5rem 1rem;
@@ -33,7 +37,7 @@ body {
 
 .nav-link:hover {
     color: #333;
-    background-color: #ffb6c1;
+    background-color: var(--accent-color);
 }
 
 /* Container */
@@ -68,11 +72,11 @@ button {
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus {
-    border-color: #ffb6c1;
+    border-color: var(--accent-color);
 }
 
 button {
-    background-color: #ffb6c1;
+    background-color: var(--accent-color);
     color: #333;
     border: none;
     cursor: pointer;
@@ -111,7 +115,7 @@ button:hover {
 .dashboard-header {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #ffb6c1;
+    color: var(--accent-color);
     text-align: center;
     padding-bottom: 1rem;
     border-bottom: 2px solid #ddd;
@@ -137,6 +141,6 @@ button:hover {
     font-size: 1.5rem;
     color: #333;
     padding: 0.5rem 0;
-    border-bottom: 2px solid #ffb6c1;
+    border-bottom: 2px solid var(--accent-color);
     margin-bottom: 1rem;
 }
