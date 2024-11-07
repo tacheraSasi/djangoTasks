@@ -4,7 +4,8 @@
     --background-color: #f5f5f5;
     --text-color: #333;
     --card-bg-color: #ffffff;
-    --box-shadow: rgba(0, 0, 0, 0.1);
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 8px 20px var(--box-shadow-color);
     --font-primary: 'Helvetica Neue', sans-serif;
     --transition-speed: 0.3s;
 }
@@ -33,7 +34,7 @@ body {
     background-color: var(--text-color);
     color: #fff;
     border-radius: 1rem;
-    box-shadow: 0 8px 20px var(--box-shadow);
+    box-shadow: var(--box-shadow);
     margin: 1rem;
     gap: 1.5rem;
 }
@@ -54,7 +55,6 @@ body {
     border-radius: 8px;
     text-decoration: none;
     transition: background-color var(--transition-speed), transform 0.2s;
-    display: inline-block;
 }
 
 .nav-link:hover, .add-task-btn:hover {
@@ -86,10 +86,33 @@ button:hover {
     padding: 2.5rem;
     background-color: var(--card-bg-color);
     border-radius: 16px;
-    box-shadow: 0 8px 20px var(--box-shadow);
+    box-shadow: var(--box-shadow);
 }
 
-/* modal */
+/* Input Fields */
+input, textarea, select {
+    width: 100%;
+    padding: 0.8rem;
+    margin:6px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px var(--accent-color);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
 /* Modal Styling */
 .modal {
     position: fixed;
@@ -103,7 +126,8 @@ button:hover {
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
+    z-index: 1000;
 }
 
 .modal.show {
@@ -116,9 +140,10 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    margin:1rem auto;
     background-color: var(--accent-color);
     color: #fff;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
 }
 
 .modal-title {
@@ -137,11 +162,11 @@ button:hover {
 .modal-content {
     background-color: var(--card-bg-color);
     padding: 2rem;
-    border-radius: 0 0 10px 10px;
-    width: 100%;
+    border-radius: 10px;
+    width: 90%;
     max-width: 500px;
     text-align: center;
-    box-shadow: 0 8px 20px var(--box-shadow);
+    box-shadow: var(--box-shadow);
 }
 
 .modal-submit {
@@ -162,3 +187,10 @@ button:hover {
     transform: translateY(-3px);
 }
 
+/* Form Label */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}

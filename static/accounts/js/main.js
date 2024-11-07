@@ -1,22 +1,23 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const addTaskBtn = document.querySelector(".add-task-btn");
-    const modal = document.getElementById("taskModal");
-    const closeModalBtn = document.getElementById("closeModal");
+// JavaScript for modal functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.querySelector('.modal');
+    const addTaskBtn = document.querySelector('.add-task-btn');
+    const closeModalBtn = document.querySelector('.modal-close');
 
-    // Function to open modal
-    addTaskBtn.addEventListener("click", function() {
-        modal.classList.add("show");
+    // Show modal when Add Task button is clicked
+    addTaskBtn.addEventListener('click', () => {
+        modal.classList.add('show');
     });
 
-    // Function to close modal
-    closeModalBtn.addEventListener("click", function() {
-        modal.classList.remove("show");
+    // Hide modal when close button is clicked
+    closeModalBtn.addEventListener('click', () => {
+        modal.classList.remove('show');
     });
 
-    // Close modal when clicking outside of it
-    window.addEventListener("click", function(event) {
-        if (event.target === modal) {
-            modal.classList.remove("show");
+    // Optional: Close modal when clicking outside of modal content
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('show');
         }
     });
 });
