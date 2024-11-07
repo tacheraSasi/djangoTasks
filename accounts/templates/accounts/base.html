@@ -41,6 +41,7 @@
                 <button class="modal-close" id="closeModal">&times;</button>
             </div>
             <form id="taskForm">
+                {% csrf_token %}
                 <input type="text" placeholder="Task Title" required>
                 <input type="text" placeholder="Task Description">
                 <button type="submit" class="modal-submit">Add Task</button>

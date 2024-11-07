@@ -77,3 +77,8 @@ def logout_view(request):
     logout(request)
     redirect('login')
     print("User has looged out successfully")
+    
+    
+#Tasks views
+def taskCreate(reqeust):
+    return HttpResponse("task creation")

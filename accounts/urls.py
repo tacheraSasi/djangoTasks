@@ -9,4 +9,5 @@ urlpatterns = [
     path('register-post/',views.registerPost,name="register-post"),
     path('logout/',views.logout_view,name="logout"),
     path('dashboard/',views.dashboard,name="dashboard"),
+    path('task/create/',views.taskCreate,name="task-create")
 ]
